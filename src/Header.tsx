@@ -25,6 +25,7 @@ export default function Header():JSX.Element {
 
     return(
         <HeaderDiv> 
+            <div style={{position:'absolute', left:'120px'}}>This site is a work in progress...</div>
 
             <LinkButton>
                 <Link href='https://github.com/johnBrowning9'>

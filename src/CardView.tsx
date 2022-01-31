@@ -22,8 +22,8 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="https://johnbrowning.dev/">
+        johnbrowning.dev
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -92,11 +92,10 @@ export function CardView():JSX.Element {
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      Name of Project
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe the
-                      content.
+                      I will provide a short description of each project here
                     </Typography>
                   </CardContent>
                   <CardActions>
@@ -111,7 +110,7 @@ export function CardView():JSX.Element {
         {/* Footer */}
         <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
           <Typography variant="h6" align="center" gutterBottom>
-            Footer
+            /Hello World\
           </Typography>
           <Typography
             variant="subtitle1"
@@ -119,7 +118,7 @@ export function CardView():JSX.Element {
             color="text.secondary"
             component="p"
           >
-            Something here to give the footer a purpose!
+            /Little by little. Bit by bit.\
           </Typography>
           <Copyright />
         </Box>
