@@ -9,6 +9,8 @@ import { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { Hi } from './Hi';
 import { randomInt } from 'crypto';
+import { ContactPage } from './ContactPage';
+import { AboutPage } from './AboutPage';
 
 
     // Just an idea for client side routing. This is using the React Router. Try this only after I get everything else working.
@@ -36,7 +38,7 @@ const ScrollPort = styled('div')`
     overflow-x:hidden;
     overflow-y:auto;
     height:100%;
-    background-color:honeydew;
+    background-color:whitesmoke;
 `
 
 const SiderButton = styled(Button)`
@@ -53,14 +55,13 @@ export function LandingPage(): JSX.Element {
     
     const handleSidebarClick = (fromWhere:string) => {
         if(fromWhere==='About'){
-            setScrollViewState(()=>{return(<>About</>)})    
+            setScrollViewState(()=>{return(<><AboutPage/></>)})    
         }
         if(fromWhere==='Work'){
             setScrollViewState(()=>{return(<><WorkView/><Footer/></>)}) 
         }
-        
-        if(fromWhere==='About'){
-            setScrollViewState(()=>{return(<>Hello</>)}) 
+        if(fromWhere==='Contact'){
+            setScrollViewState(()=>{return(<><ContactPage/></>)})
         }
     }
 
@@ -86,11 +87,11 @@ export function LandingPage(): JSX.Element {
                         </Typography>
                     </SiderButton>
     
-                    <SiderButton variant='outlined' size= 'large' onClick={()=>handleSidebarClick('About')}>
+                    {/* <SiderButton variant='outlined' size= 'large' onClick={()=>handleSidebarClick('About')}>
                         <Typography color='white' noWrap sx={{fontSize: 15}}>
                             About
                         </Typography>
-                    </SiderButton>
+                    </SiderButton> */}
     
                     <SiderButton variant='outlined'size='large' sx={{padding:0}} onClick={()=>handleSidebarClick('Contact')}> {/*onClick={()=>router.push('/ContactPage')} */}
                         <Typography color='white' noWrap sx={{fontSize: 15}}>

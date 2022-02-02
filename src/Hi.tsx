@@ -74,7 +74,7 @@ export const Hi = () => {
         
         <Box
         sx={{
-        bgcolor: 'honeydew',
+        bgcolor: 'whitesmoke',
         pt: 8,
         pb: 6,
         display: 'flex',

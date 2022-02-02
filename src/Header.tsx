@@ -4,7 +4,10 @@ import { Button, Link } from '@mui/material';
 import { styled } from '@mui/system';
 
 const LinkButton = styled(Button)`
-
+    background-color: rgb(139, 0, 0, .15);
+    border-radius: 25px; 
+    margin-right: 10px;
+    margin-top: 5px; 
 `
 
 const HeaderDiv = styled('div')`
@@ -28,8 +31,8 @@ export default function Header():JSX.Element {
             <div style={{position:'absolute', left:'120px'}}>This site is a work in progress...</div>
 
             <LinkButton>
-                <Link href='https://github.com/johnBrowning9'>
-                    <GitHub>
+                <Link href='https://github.com/johnBrowning9' style={{paddingTop:'6px'}}>
+                    <GitHub sx={{color:'red'}}>
                     </GitHub>  
                 </Link>      
             </LinkButton>
@@ -38,15 +41,15 @@ export default function Header():JSX.Element {
 
             <LinkButton>
                 
-                    <Instagram>
+                    <Instagram sx={{color:'red'}}>
                     
                     </Instagram>
                
             </LinkButton>
 
             <LinkButton>
-                <Link href='https://www.linkedin.com/in/johntbrowning/'>
-                    <LinkedIn>
+                <Link href='https://www.linkedin.com/in/johntbrowning/' style={{paddingTop:'6.5px'}}>
+                    <LinkedIn sx={{color:'red'}}>
 
                     </LinkedIn>
                 </Link>
