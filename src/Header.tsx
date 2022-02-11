@@ -6,8 +6,9 @@ import { styled } from '@mui/system';
 const LinkButton = styled(Button)`
     background-color: rgb(139, 0, 0, .15);
     border-radius: 25px; 
-    margin-right: 10px;
+    justify-content: center;
     margin-top: 5px; 
+    
 `
 
 const HeaderDiv = styled('div')`
@@ -28,32 +29,33 @@ export default function Header():JSX.Element {
 
     return(
         <HeaderDiv> 
-            <div style={{position:'absolute', left:'120px'}}>This site is a work in progress...</div>
-
-            <LinkButton>
+        
+            <div style={{backgroundColor:'transparent', display:'flex', flexDirection:'row', marginRight:'23px', justifyContent:'space-between', width:'230px'}}>
+            <LinkButton variant = 'outlined' sx={{color:'red', border: '1px solid red', backgroundColor: 'black'}}>
                 <Link href='https://github.com/johnBrowning9' style={{paddingTop:'6px'}}>
-                    <GitHub sx={{color:'red'}}>
+                    <GitHub sx={{color:'white'}}>
                     </GitHub>  
                 </Link>      
             </LinkButton>
 
                 
 
-            <LinkButton>
+            <LinkButton variant = 'outlined' sx={{color:'red', border: '1px solid red', backgroundColor: 'black'}}>
                 
-                    <Instagram sx={{color:'red'}}>
+                    <Instagram sx={{color:'white'}}>
                     
                     </Instagram>
                
             </LinkButton>
 
-            <LinkButton>
+            <LinkButton variant = 'outlined' sx={{color:'red', border: '1px solid red', backgroundColor: 'black'}}>
                 <Link href='https://www.linkedin.com/in/johntbrowning/' style={{paddingTop:'6.5px'}}>
-                    <LinkedIn sx={{color:'red'}}>
+                    <LinkedIn sx={{color:'white'}}>
 
                     </LinkedIn>
                 </Link>
             </LinkButton>
+            </div>
 
         </HeaderDiv>
 

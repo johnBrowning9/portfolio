@@ -41,40 +41,7 @@ export function CardView():JSX.Element {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <main style={{display: 'flex', flexDirection: 'column'}}>
-        {/* Hero unit */}
-        {/* <Box
-          sx={{
-            bgcolor: 'background.paper',
-            pt: 8,
-            pb: 6,
-          }}
-        >
-          <Container maxWidth="sm">
-            <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="text.primary"
-              gutterBottom
-            >
-              Hi! I'm John :) {/* make this type out dynamically with keyboard sounds ! */}
-            {/* </Typography>
-            <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              I make 
-            </Typography>
-            <Stack
-              sx={{ pt: 4 }}
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-            >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
-            </Stack>
-          </Container> */}
-        {/* </Box> */}
         <Container sx={{ py: 8 }} maxWidth="md">
-          {/* End hero unit */}
           <Grid container spacing={4}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>

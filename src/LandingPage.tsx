@@ -46,6 +46,8 @@ const SiderButton = styled(Button)`
     border-color: red;
     height:30px;
     width:95%;
+    background-color:black;
+    border-radius:25px;
 `
 
 
@@ -71,11 +73,22 @@ export function LandingPage(): JSX.Element {
 
     const Sider = () => {
 
+        /** It could be cool to have the background image cycle around, like a barber pole effect. */
         return(
-            <AppBar style={{width:'110px', height:'100%', position:'absolute', left:'0', flex:'auto', flexDirection:'column', backgroundColor:'black', borderRightStyle:'groove'}}>
+            <AppBar style={{width:'110px', height:'100%', position:'absolute', left:'0', flex:'auto', flexDirection:'column', backgroundColor:'transparent', borderRightStyle:'groove', backgroundImage: 'url(/codeBackground.jpg)', backgroundSize:'cover'}}>
+                
                 <Toolbar style={{flex:'auto', flexDirection:'column', placeContent:'center', justifyContent:'space-around', paddingTop:'100px', paddingBottom:'100px', paddingLeft:'0px', paddingRight:'0px'}}>
                     
-                    <SiderButton variant='outlined' size= 'large' onClick={() => handleSidebarClick('About')}> {/* Not sure if this function will work */}
+                    <Button style={{backgroundColor:'black', height:'60px', position:'absolute', top:'0', width:'100%'}}>
+                        {/* <img src='/redHair.jpg' alt='red hair logo' style={{height:'100px', position:'absolute', borderRadius:'25px'}}>
+
+                        </img> */}
+                        <Typography color='white'>
+                            .dev
+                        </Typography>
+
+                    </Button>
+                    <SiderButton variant='outlined' size= 'large' onClick={() => handleSidebarClick('About')}> 
                         <Typography color='white' noWrap sx={{fontSize: 15}}>
                             About
                         </Typography>
@@ -86,12 +99,6 @@ export function LandingPage(): JSX.Element {
                             Work
                         </Typography>
                     </SiderButton>
-    
-                    {/* <SiderButton variant='outlined' size= 'large' onClick={()=>handleSidebarClick('About')}>
-                        <Typography color='white' noWrap sx={{fontSize: 15}}>
-                            About
-                        </Typography>
-                    </SiderButton> */}
     
                     <SiderButton variant='outlined'size='large' sx={{padding:0}} onClick={()=>handleSidebarClick('Contact')}> {/*onClick={()=>router.push('/ContactPage')} */}
                         <Typography color='white' noWrap sx={{fontSize: 15}}>
@@ -105,7 +112,7 @@ export function LandingPage(): JSX.Element {
     
     return(
     
-        <div style={{height:'100%', width:'100%', bottom:0, top:0}}> {/* toolbars */}
+        <div style={{height:'100%', width:'100%', bottom:0, top:0}}>
             <Header/>
             <Sider/>
             <div style={{display: 'flex', flexDirection: 'row'}}> 
@@ -113,7 +120,7 @@ export function LandingPage(): JSX.Element {
                 
                 
 
-                <ScrollPort> {/* this is the scrollview */}
+                <ScrollPort>
                     {scrollViewState}
                 </ScrollPort>
             </div>

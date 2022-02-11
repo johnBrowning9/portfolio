@@ -34,7 +34,8 @@ const ContactForm = () => {
         
         top: '140px',
         width: '72%',
-        marginLeft: '100px'
+        marginLeft: '10vw',
+        minWidth: '200px'
         }}
     >
       <div style={{padding:'8px'}}>
