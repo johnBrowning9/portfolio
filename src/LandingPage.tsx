@@ -6,11 +6,12 @@ import { Footer } from "./Footer";
 import { CardView} from './CardView';
 import { styled } from '@mui/system';
 import { useState, useEffect } from 'react';
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, fabClasses } from '@mui/material';
 import { Hi } from './Hi';
 import { randomInt } from 'crypto';
 import { ContactPage } from './ContactPage';
 import { AboutPage } from './AboutPage';
+import { FlashOnOutlined } from '@mui/icons-material';
 
 
     // Just an idea for client side routing. This is using the React Router. Try this only after I get everything else working.
@@ -23,6 +24,7 @@ import { AboutPage } from './AboutPage';
     //     )
     //   })
     //   <Link to="/" component={FancyLink} />
+
 
 const WorkView = styled(CardView)`
     height:auto;
@@ -41,19 +43,22 @@ const ScrollPort = styled('div')`
     background-color:whitesmoke;
 `
 
-const SiderButton = styled(Button)`
+const SiderButton = styled(Button)` //<{isHovering?:boolean}>  This is for dynamic styles
+    //transition: background-color .1s ease;
     z-index:1;
     border-color: red;
     height:30px;
     width:95%;
-    background-color:black;
     border-radius:25px;
+    background-color: black;
 `
+//background-color: ${(props) => (props.isHovering ? 'red' : 'black')};
 
 
 export function LandingPage(): JSX.Element {
 
     const [scrollViewState, setScrollViewState] = useState(()=>{return(<><Hi/></>)})
+    const [isHovering, setIsHovering] = useState(false);
     
     const handleSidebarClick = (fromWhere:string) => {
         if(fromWhere==='About'){
@@ -65,6 +70,9 @@ export function LandingPage(): JSX.Element {
         if(fromWhere==='Contact'){
             setScrollViewState(()=>{return(<><ContactPage/></>)})
         }
+        if(fromWhere==='Home'){
+            setScrollViewState(()=>{return(<><Hi/></>)})
+        }
     }
 
     
@@ -73,34 +81,33 @@ export function LandingPage(): JSX.Element {
 
     const Sider = () => {
 
+
         /** It could be cool to have the background image cycle around, like a barber pole effect. */
         return(
             <AppBar style={{width:'110px', height:'100%', position:'absolute', left:'0', flex:'auto', flexDirection:'column', backgroundColor:'transparent', borderRightStyle:'groove', backgroundImage: 'url(/codeBackground.jpg)', backgroundSize:'cover'}}>
                 
                 <Toolbar style={{flex:'auto', flexDirection:'column', placeContent:'center', justifyContent:'space-around', paddingTop:'100px', paddingBottom:'100px', paddingLeft:'0px', paddingRight:'0px'}}>
                     
-                    <Button style={{backgroundColor:'black', height:'60px', position:'absolute', top:'0', width:'100%'}}>
-                        {/* <img src='/redHair.jpg' alt='red hair logo' style={{height:'100px', position:'absolute', borderRadius:'25px'}}>
-
-                        </img> */}
+                    <Button onClick={() => handleSidebarClick('Home')} style={{backgroundColor:'black', height:'60px', position:'absolute', top:'0', width:'100%', borderBottom: 'dotted', borderBottomColor:'red'}}>
+                    
                         <Typography color='white'>
                             .dev
                         </Typography>
 
                     </Button>
-                    <SiderButton variant='outlined' size= 'large' onClick={() => handleSidebarClick('About')}> 
+                    <SiderButton variant='outlined' size= 'large' onClick={() => handleSidebarClick('About')} sx={{"&.MuiButton-root:hover": {backgroundColor: "red"}}}> 
                         <Typography color='white' noWrap sx={{fontSize: 15}}>
                             About
                         </Typography>
                     </SiderButton>
     
-                    <SiderButton variant='outlined' size= 'large' onClick={() => handleSidebarClick('Work')}>
+                    <SiderButton variant='outlined' size= 'large' onClick={() => handleSidebarClick('Work')} sx={{"&.MuiButton-root:hover": {backgroundColor: "red"}}}>
                         <Typography color='white' noWrap sx={{fontSize: 15}}>
                             Work
                         </Typography>
                     </SiderButton>
     
-                    <SiderButton variant='outlined'size='large' sx={{padding:0}} onClick={()=>handleSidebarClick('Contact')}> {/*onClick={()=>router.push('/ContactPage')} */}
+                    <SiderButton variant='outlined'size='large' onClick={()=>handleSidebarClick('Contact')} sx={{"&.MuiButton-root:hover": {backgroundColor: "red"}, padding:0}}> {/*onClick={()=>router.push('/ContactPage')} */}
                         <Typography color='white' noWrap sx={{fontSize: 15}}>
                             Contact
                         </Typography>

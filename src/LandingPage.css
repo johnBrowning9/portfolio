@@ -1,0 +1,7 @@
+.MuiButton-root {
+    background-color: black;
+}
+
+.MuiButton-root:hover {
+    background-color: red;
+}
