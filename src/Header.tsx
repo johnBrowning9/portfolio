@@ -31,7 +31,7 @@ export default function Header():JSX.Element {
         <HeaderDiv> 
         
             <div style={{backgroundColor:'transparent', display:'flex', flexDirection:'row', marginRight:'23px', justifyContent:'space-between', width:'230px'}}>
-            <LinkButton variant = 'outlined' sx={{color:'red', border: '1px solid red', backgroundColor: 'black'}}>
+            <LinkButton variant = 'outlined' sx={{color:'red', border: '1px solid red', backgroundColor: 'black', "&.MuiButton-root:hover": {backgroundColor: "red", borderColor:'red'}}}> 
                 <Link href='https://github.com/johnBrowning9' style={{paddingTop:'6px'}}>
                     <GitHub sx={{color:'white'}}>
                     </GitHub>  
@@ -40,7 +40,7 @@ export default function Header():JSX.Element {
 
                 
 
-            <LinkButton variant = 'outlined' sx={{color:'red', border: '1px solid red', backgroundColor: 'black'}}>
+            <LinkButton variant = 'outlined' sx={{color:'red', border: '1px solid red', backgroundColor: 'black', "&.MuiButton-root:hover": {backgroundColor: "red", borderColor:'red'}}}>
                 
                     <Instagram sx={{color:'white'}}>
                     
@@ -48,7 +48,7 @@ export default function Header():JSX.Element {
                
             </LinkButton>
 
-            <LinkButton variant = 'outlined' sx={{color:'red', border: '1px solid red', backgroundColor: 'black'}}>
+            <LinkButton variant = 'outlined' sx={{color:'red', border: '1px solid red', backgroundColor: 'black', "&.MuiButton-root:hover": {backgroundColor: "red", borderColor:'red'}}}>
                 <Link href='https://www.linkedin.com/in/johntbrowning/' style={{paddingTop:'6.5px'}}>
                     <LinkedIn sx={{color:'white'}}>
 

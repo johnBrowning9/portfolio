@@ -95,19 +95,19 @@ export function LandingPage(): JSX.Element {
                         </Typography>
 
                     </Button>
-                    <SiderButton variant='outlined' size= 'large' onClick={() => handleSidebarClick('About')} sx={{"&.MuiButton-root:hover": {backgroundColor: "red"}}}> 
+                    <SiderButton variant='outlined' size= 'large' onClick={() => handleSidebarClick('About')} sx={{"&.MuiButton-root:hover": {backgroundColor: "red", borderColor:'red'}}}> 
                         <Typography color='white' noWrap sx={{fontSize: 15}}>
                             About
                         </Typography>
                     </SiderButton>
     
-                    <SiderButton variant='outlined' size= 'large' onClick={() => handleSidebarClick('Work')} sx={{"&.MuiButton-root:hover": {backgroundColor: "red"}}}>
+                    <SiderButton variant='outlined' size= 'large' onClick={() => handleSidebarClick('Work')} sx={{"&.MuiButton-root:hover": {backgroundColor: "red", borderColor:'red'}}}>
                         <Typography color='white' noWrap sx={{fontSize: 15}}>
                             Work
                         </Typography>
                     </SiderButton>
     
-                    <SiderButton variant='outlined'size='large' onClick={()=>handleSidebarClick('Contact')} sx={{"&.MuiButton-root:hover": {backgroundColor: "red"}, padding:0}}> {/*onClick={()=>router.push('/ContactPage')} */}
+                    <SiderButton variant='outlined'size='large' onClick={()=>handleSidebarClick('Contact')} sx={{"&.MuiButton-root:hover": {backgroundColor: "red", borderColor:'red'}, padding:0}}> {/*onClick={()=>router.push('/ContactPage')} */}
                         <Typography color='white' noWrap sx={{fontSize: 15}}>
                             Contact
                         </Typography>
